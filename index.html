@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNERGEX | Enterprise Solutions Portal</title>
+  <meta name="description" content="Next-generation Enterprise Solutions Portal: Cloud Architecture, AI Automation, Zero-Trust Cybersecurity, and Business Intelligence for Global Organizations.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <!-- Preconnect for optional Google Fonts, system fallback is 100% resilient offline -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+  <!-- ================= TOP ENTERPRISE BANNER ================= -->
+  <aside class="enterprise-banner" id="enterpriseBanner" aria-label="Enterprise Announcements">
+    <div class="banner-inner container">
+      <div class="banner-tag">
+        <span class="pulse-dot"></span>
+        <span class="banner-badge-text">STATUS: OPERATIONAL</span>
+      </div>
+      <p class="banner-text">
+        <strong>SYNERGEX Core v4.8 Released:</strong> Multi-Cloud Neural Fabric with FedRAMP High &amp; SOC-2 Type II Compliance.
+      </p>
+      <div class="banner-actions">
+        <a href="#solutions" class="banner-link" id="bannerLearnMore">View Architecture &rarr;</a>
+        <button class="banner-close" id="bannerCloseBtn" aria-label="Close notification banner">&times;</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= GLOBAL NAVIGATION ================= -->
+  <header class="app-header" id="appHeader">
+    <div class="header-container container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
+            <rect x="3" y="3" width="34" height="34" rx="10" fill="#041610" stroke="#10b981" stroke-width="1.8"/>
+            <path d="M20 8 L32 15 L32 25 L20 32 L8 25 L8 15 Z" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M20 13 L28 18 L28 24 L20 28 L12 24 L12 18 Z" fill="#064e3b" stroke="#ffffff" stroke-width="1"/>
+            <circle cx="20" cy="20" r="3.5" fill="#34d399"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">SYNERGEX</span>
+          <span class="brand-sub">ENTERPRISE SOLUTIONS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#solutions" class="nav-link" data-nav="solutions">Solutions</a></li>
+          <li><a href="#industries" class="nav-link" data-nav="industries">Industries</a></li>
+          <li><a href="#services" class="nav-link" data-nav="services">Services</a></li>
+          <li><a href="#tech-stack" class="nav-link" data-nav="tech-stack">Tech Stack</a></li>
+          <li><a href="#analytics" class="nav-link" data-nav="analytics">Analytics &amp; BI</a></li>
+          <li><a href="#projects" class="nav-link" data-nav="projects">Projects</a></li>
+          <li><a href="#case-studies" class="nav-link" data-nav="case-studies">Case Studies</a></li>
+          <li><a href="#insights" class="nav-link" data-nav="insights">Insights</a></li>
+          <li><a href="#portal" class="nav-link portal-tab-link" id="navPortalLink">Client Portal</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action Controls -->
+      <div class="header-actions">
+        <!-- Spotlight Search Button -->
+        <button class="icon-btn search-trigger-btn" id="searchTriggerBtn" title="Global Search (Ctrl + K)" aria-label="Open Global Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span class="search-key-badge">⌘K</span>
+        </button>
+
+        <!-- Saved / Bookmarks Drawer Button -->
+        <button class="icon-btn" id="savedItemsBtn" title="Saved Items &amp; Briefs" aria-label="Open Saved Items">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="badge-count" id="savedCountBadge">0</span>
+        </button>
+
+        <!-- Notifications Drawer Button -->
+        <button class="icon-btn" id="notificationsBtn" title="Enterprise Notifications" aria-label="Open Notifications">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge-dot" id="notifDot"></span>
+        </button>
+
+        <!-- Dark / Light Theme Switcher -->
+        <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" title="Toggle Theme (Emerald Dark / Platinum Ivory)" aria-label="Toggle Theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- User Auth / Profile Button -->
+        <button class="user-profile-btn" id="userAuthBtn" title="Demo Authentication &amp; Profile" aria-label="Account Settings">
+          <span class="avatar-initials" id="userAvatarText">EX</span>
+          <span class="user-role-label" id="userRoleBadge">Enterprise</span>
+        </button>
+
+        <!-- Primary CTA: Request a Consultation -->
+        <a href="#consultation" class="btn btn-primary nav-cta-btn" id="navConsultBtn">
+          <span>Request Consultation</span>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <ul class="mobile-nav-list">
+          <li><a href="#solutions" class="mobile-link">Solutions Marketplace</a></li>
+          <li><a href="#industries" class="mobile-link">Industries Matrix</a></li>
+          <li><a href="#services" class="mobile-link">Enterprise Services</a></li>
+          <li><a href="#tech-stack" class="mobile-link">Technology Stack</a></li>
+          <li><a href="#analytics" class="mobile-link">Analytics &amp; BI</a></li>
+          <li><a href="#projects" class="mobile-link">Active Projects</a></li>
+          <li><a href="#support-center" class="mobile-link">Support Desk</a></li>
+          <li><a href="#consultation" class="mobile-link">Consultation Booking</a></li>
+          <li><a href="#case-studies" class="mobile-link">Case Studies</a></li>
+          <li><a href="#insights" class="mobile-link">Whitepapers &amp; Insights</a></li>
+          <li><a href="#portal" class="mobile-link portal-highlight">Launch Client Portal</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="#consultation" class="btn btn-primary btn-block mobile-drawer-cta">Request Enterprise Briefing</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN APPLICATION VIEW ================= -->
+  <main id="mainContent" class="main-layout">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glows">
+        <div class="emerald-glow-1"></div>
+        <div class="emerald-glow-2"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="#34d399">
+                <path d="M8 0l2.4 5.2L16 6l-4 3.8L13 15 8 12.2 3 15l1-5.2L0 6l5.6-.8L8 0z"/>
+              </svg>
+            </span>
+            <span class="badge-text">Next-Gen Enterprise Acceleration Suite</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Enterprise Solutions Built for <span class="gradient-text">What’s Next.</span>
+          </h1>
+
+          <p class="hero-subtext">
+            Modernize critical infrastructure, automate complex operational workflows, deploy sovereign AI systems, and scale mission-grade cloud architectures with verifiable resilience and uncompromising enterprise security.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#solutions" class="btn btn-primary btn-lg" id="heroExploreBtn">
+              <span>Explore Solutions</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+
+            <a href="#consultation" class="btn btn-secondary btn-lg" id="heroConsultBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>Request a Consultation</span>
+            </a>
+          </div>
+
+          <!-- Enterprise Trust Indicators -->
+          <div class="hero-trust">
+            <span class="trust-label">TRUSTED BY INDUSTRY LEADERS WORLDWIDE</span>
+            <div class="trust-logos">
+              <div class="trust-pill"><span class="logo-sym">◆</span> AURA FINANCIAL</div>
+              <div class="trust-pill"><span class="logo-sym">▲</span> NOVAMED BIOTECH</div>
+              <div class="trust-pill"><span class="logo-sym">●</span> VANGUARD LOGIX</div>
+              <div class="trust-pill"><span class="logo-sym">■</span> NEXUS ROBOTICS</div>
+              <div class="trust-pill"><span class="logo-sym">❖</span> HELIOS ENERGY</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Side: Interactive Enterprise Technology Ecosystem -->
+        <div class="hero-visual-wrapper">
+          <div class="ecosystem-card-frame">
+            <!-- Canvas Container -->
+            <canvas id="heroEcosystemCanvas" width="600" height="520" aria-label="Interactive Enterprise Network Visualizer"></canvas>
+
+            <!-- Interactive Canvas Control Overlay -->
+            <div class="canvas-controls">
+              <span class="canvas-status"><span class="pulse-dot active"></span> LIVE ECOSYSTEM MESH</span>
+              <div class="canvas-buttons">
+                <button class="canvas-action-btn" id="canvasPulseBtn" title="Send Global Telemetry Pulse">Trigger Pulse</button>
+                <button class="canvas-action-btn" id="canvasResetBtn" title="Recalibrate Network">Reset View</button>
+              </div>
+            </div>
+
+            <!-- Floating Glass Telemetry Badges -->
+            <div class="floating-badge badge-top-right">
+              <div class="badge-metric-icon emerald">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="badge-data">
+                <span class="badge-title">99.995% SLA</span>
+                <span class="badge-desc">Zero-Trust Mesh Active</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <div class="badge-metric-icon platinum">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <div class="badge-data">
+                <span class="badge-title">$18.4B Transacted</span>
+                <span class="badge-desc">Real-Time Core Fabric</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-metric-icon ivory">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div class="badge-data">
+                <span class="badge-title">48 Global Nodes</span>
+                <span class="badge-desc">&lt;8ms Edge Latency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIVE STATISTICS SECTION ================= -->
+    <section class="stats-section" id="statsSection">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-stat="clients">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <span class="stat-delta positive">+18% YoY</span>
+            </div>
+            <div class="stat-value-wrap">
+              <span class="stat-number" data-target="2500">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Enterprise Clients</span>
+            <p class="stat-detail">Across Fortune 1000 &amp; Global Tech Enterprises</p>
+          </div>
+
+          <div class="stat-card" data-stat="countries">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <span class="stat-delta neutral">Multi-Region</span>
+            </div>
+            <div class="stat-value-wrap">
+              <span class="stat-number" data-target="48">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Countries &amp; Jurisdictions</span>
+            <p class="stat-detail">Full GDPR, HIPAA &amp; FedRAMP compliance</p>
+          </div>
+
+          <div class="stat-card" data-stat="uptime">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <span class="stat-delta positive">High Availability</span>
+            </div>
+            <div class="stat-value-wrap">
+              <span class="stat-number" data-target="99.99" data-decimals="2">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label">Platform Reliability</span>
+            <p class="stat-detail">Backed by financially certified SLA tier guarantees</p>
+          </div>
+
+          <div class="stat-card" data-stat="years">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <span class="stat-delta positive">Track Record</span>
+            </div>
+            <div class="stat-value-wrap">
+              <span class="stat-number" data-target="15">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Years of Innovation</span>
+            <p class="stat-detail">Pioneering resilient enterprise engineering architectures</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOLUTIONS DISCOVERY & MARKETPLACE ================= -->
+    <section class="section-padding solutions-section" id="solutions">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">ENTERPRISE SOLUTIONS CATALOG</div>
+          <h2 class="section-title">Engineered for Uncompromising Scale</h2>
+          <p class="section-description">
+            Discover tailored enterprise solutions designed to modernize legacy environments, protect sensitive data perimeters, and unlock transformative operational performance.
+          </p>
+        </div>
+
+        <!-- Solution Search & Multi-Faceted Filters -->
+        <div class="solutions-filter-console">
+          <div class="filter-top-bar">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="solutionSearchInput" placeholder="Search solutions by keyword, technology, or goal..." autocomplete="off">
+              <button class="clear-search-btn" id="clearSolutionSearch" title="Clear search">&times;</button>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="sort-select-wrap">
+              <label for="solutionSortSelect">Sort by:</label>
+              <select id="solutionSortSelect" class="form-select">
+                <option value="recommended">Recommended</option>
+                <option value="popular">Most Popular</option>
+                <option value="newest">Newest Innovation</option>
+                <option value="scale">Enterprise Scale</option>
+                <option value="efficiency">Highest Efficiency</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Faceted Filter Dropdowns & Pills -->
+          <div class="filter-facets-row">
+            <div class="facet-group">
+              <label for="filterIndustry">Industry:</label>
+              <select id="filterIndustry" class="facet-select">
+                <option value="all">All Industries</option>
+                <option value="finance">Banking &amp; Financial Services</option>
+                <option value="healthcare">Healthcare &amp; Life Sciences</option>
+                <option value="retail">Retail &amp; Commerce</option>
+                <option value="manufacturing">Manufacturing &amp; IoT</option>
+                <option value="government">Government &amp; Public Sector</option>
+                <option value="telecom">Telecommunications</option>
+              </select>
+            </div>
+
+            <div class="facet-group">
+              <label for="filterSize">Org Size:</label>
+              <select id="filterSize" class="facet-select">
+                <option value="all">All Scales</option>
+                <option value="mid">Mid-Market (500-2,000)</option>
+                <option value="enterprise">Global Enterprise (2,000+)</option>
+                <option value="fortune500">Fortune 500 / Hyperscale</option>
+              </select>
+            </div>
+
+            <div class="facet-group">
+              <label for="filterType">Solution Area:</label>
+              <select id="filterType" class="facet-select">
+                <option value="all">All Core Areas</option>
+                <option value="cloud">Cloud &amp; Infrastructure</option>
+                <option value="ai">AI &amp; Autonomous Workflows</option>
+                <option value="security">Cybersecurity &amp; Zero-Trust</option>
+                <option value="data">Data &amp; Business Intelligence</option>
+                <option value="engineering">Software Engineering</option>
+                <option value="optimization">Process Optimization</option>
+              </select>
+            </div>
+
+            <div class="facet-group">
+              <label for="filterGoal">Business Goal:</label>
+              <select id="filterGoal" class="facet-select">
+                <option value="all">All Strategic Goals</option>
+                <option value="modernization">Rapid Modernization</option>
+                <option value="cost">OpEx &amp; Cloud Cost Reduction</option>
+                <option value="risk">Risk &amp; Sovereign Compliance</option>
+                <option value="velocity">Accelerated Product Velocity</option>
+              </select>
+            </div>
+
+            <button class="btn btn-ghost reset-filters-btn" id="resetFiltersBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2.5 2v6h6M21.5 22v-6h-6"/>
+                <path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.3"/>
+              </svg>
+              <span>Reset Filters</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Counter & Active Filter Pills -->
+          <div class="filter-status-bar">
+            <div class="results-counter" id="solutionResultsCounter">
+              Showing <span class="highlight-count" id="visibleSolutionsCount">8</span> of 8 Enterprise Solutions
+            </div>
+            <div class="active-tags-container" id="activeFilterTags"></div>
+          </div>
+        </div>
+
+        <!-- Solutions Grid Container -->
+        <div class="solutions-grid" id="solutionsGrid">
+          <!-- Populated dynamically via JS for ultra-crisp responsive filtering -->
+        </div>
+
+        <!-- No Results Fallback State -->
+        <div class="no-results-state hidden" id="noSolutionsState">
+          <div class="no-results-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#10b981" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+          </div>
+          <h3>No matching enterprise solutions found</h3>
+          <p>Try clearing your active filters or searching for terms like "Cloud", "Security", "AI", or "Compliance".</p>
+          <button class="btn btn-secondary" id="emptyStateResetBtn">Reset All Search Criteria</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INDUSTRIES SECTION ================= -->
+    <section class="section-padding industries-section" id="industries">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">CROSS-INDUSTRY EXPERTISE</div>
+          <h2 class="section-title">Engineered for Complex Enterprise Verticals</h2>
+          <p class="section-description">
+            Tailored architecture blueprints calibrated to meet the strict regulatory, operational, and data sovereignty requirements of diverse global industries.
+          </p>
+        </div>
+
+        <!-- Industries Grid -->
+        <div class="industries-grid" id="industriesGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE SERVICES ================= -->
+    <section class="section-padding services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">PROFESSIONAL SERVICES &amp; DELIVERY</div>
+          <h2 class="section-title">End-to-End Enterprise Capabilities</h2>
+          <p class="section-description">
+            From strategic technical discovery through sovereign infrastructure engineering to ongoing 24/7 mission support, our elite architects accelerate your organizational objectives.
+          </p>
+        </div>
+
+        <div class="services-wrapper">
+          <!-- Phased Delivery Methodology Banner -->
+          <div class="methodology-bar">
+            <div class="method-step">
+              <span class="step-num">01</span>
+              <span class="step-name">Enterprise Discovery</span>
+              <span class="step-desc">Audit, architecture mapping, ROI projections</span>
+            </div>
+            <div class="method-divider">&rarr;</div>
+            <div class="method-step">
+              <span class="step-num">02</span>
+              <span class="step-name">Sovereign Architecture</span>
+              <span class="step-desc">Zero-trust blueprints, threat modeling &amp; SLAs</span>
+            </div>
+            <div class="method-divider">&rarr;</div>
+            <div class="method-step">
+              <span class="step-num">03</span>
+              <span class="step-name">Precision Execution</span>
+              <span class="step-desc">Milestone sprints, zero-downtime cutover</span>
+            </div>
+            <div class="method-divider">&rarr;</div>
+            <div class="method-step">
+              <span class="step-num">04</span>
+              <span class="step-name">24/7 Global Scale</span>
+              <span class="step-desc">Continuous telemetry, telemetry monitoring</span>
+            </div>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="services-grid" id="servicesGrid">
+            <!-- Populated dynamically via script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE TECHNOLOGY STACK ================= -->
+    <section class="section-padding tech-stack-section" id="tech-stack">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">ENTERPRISE ARCHITECTURE</div>
+          <h2 class="section-title">Hyperscale Technology Capabilities</h2>
+          <p class="section-description">
+            Explore our vetted, enterprise-ready technical portfolio spanning distributed cloud nodes, autonomous agent systems, real-time data pipelines, and zero-trust security fabrics.
+          </p>
+        </div>
+
+        <!-- Tech Category Switcher Tabs -->
+        <div class="tech-tabs-nav" id="techTabsNav" role="tablist">
+          <button class="tech-tab-btn active" data-cat="cloud" role="tab">Cloud &amp; Mesh</button>
+          <button class="tech-tab-btn" data-cat="ai" role="tab">AI &amp; Autonomous</button>
+          <button class="tech-tab-btn" data-cat="data" role="tab">Data &amp; Streaming</button>
+          <button class="tech-tab-btn" data-cat="security" role="tab">Zero-Trust Security</button>
+          <button class="tech-tab-btn" data-cat="automation" role="tab">Automation &amp; CI/CD</button>
+          <button class="tech-tab-btn" data-cat="infrastructure" role="tab">Core Infrastructure</button>
+          <button class="tech-tab-btn" data-cat="software" role="tab">Software Engineering</button>
+          <button class="tech-tab-btn" data-cat="integration" role="tab">Enterprise Integration</button>
+        </div>
+
+        <!-- Dynamic Tech Showcase Grid -->
+        <div class="tech-showcase-grid" id="techShowcaseGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLIENT PORTAL & BI ANALYTICS DASHBOARD ================= -->
+    <section class="section-padding dashboard-section" id="analytics">
+      <div class="container">
+        <div class="dashboard-header-block">
+          <div>
+            <div class="section-eyebrow">BUSINESS INTELLIGENCE &amp; TELEMETRY</div>
+            <h2 class="section-title">Enterprise Analytics Dashboard</h2>
+            <p class="section-description">
+              Live executive visibility into mission infrastructure, operational velocity, cloud cost optimization, and active enterprise engagements.
+            </p>
+          </div>
+          <!-- Dashboard Actions -->
+          <div class="dash-action-group">
+            <span class="refresh-indicator"><span class="pulse-dot"></span> Live Telemetry</span>
+            <button class="btn btn-secondary btn-sm" id="exportBiReportBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Export BI Report</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Executive KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Active Projects</span>
+              <div class="kpi-icon emerald">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiActiveProjects">24</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend positive">&uarr; 4 Deployments</span>
+              <span class="kpi-sub">Across 6 Global Regions</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Operational Efficiency</span>
+              <div class="kpi-icon platinum">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiEfficiency">+34.8%</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend positive">&uarr; +6.2% vs Q2</span>
+              <span class="kpi-sub">Workflow Automation</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Core System Health</span>
+              <div class="kpi-icon emerald">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiSystemHealth">99.994%</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend positive">&bull; Zero Downtime</span>
+              <span class="kpi-sub">Zero High-Severity Incidents</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Open Service Requests</span>
+              <div class="kpi-icon ivory">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiOpenRequests">3</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend neutral">&bull; Avg SLA: 18 min</span>
+              <span class="kpi-sub">L3 Solutions Engineers</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Monthly Cloud Savings</span>
+              <div class="kpi-icon emerald">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiSavings">$148,200</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend positive">&uarr; 26.4% Optimization</span>
+              <span class="kpi-sub">FinOps Automated Policies</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Team Velocity</span>
+              <div class="kpi-icon platinum">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val" id="kpiVelocity">98.4 pts</div>
+            <div class="kpi-footer">
+              <span class="kpi-trend positive">&uarr; Sprint On-Track</span>
+              <span class="kpi-sub">12 Dedicated Pods Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Canvas Analytics Charts Section -->
+        <div class="charts-master-grid">
+          <!-- Chart 1: Operational Performance Throughput -->
+          <div class="chart-container-card chart-span-2">
+            <div class="chart-header">
+              <div>
+                <h3 class="chart-title">Operational Performance &amp; Throughput</h3>
+                <p class="chart-subtitle">Real-time enterprise event stream processing (Million Events / Sec)</p>
+              </div>
+              <div class="chart-filter-pills" id="perfTimeframe">
+                <button class="pill-btn active" data-range="7d">7D</button>
+                <button class="pill-btn" data-range="30d">30D</button>
+                <button class="pill-btn" data-range="90d">90D</button>
+                <button class="pill-btn" data-range="1y">1Y</button>
+              </div>
+            </div>
+            <div class="canvas-chart-wrap">
+              <canvas id="perfChartCanvas" height="260" aria-label="Operational Performance Spline Chart"></canvas>
+            </div>
+            <div class="chart-legend-row">
+              <span class="legend-item"><span class="legend-dot line-emerald"></span> Throughput Peak</span>
+              <span class="legend-item"><span class="legend-dot line-platinum"></span> 99th Percentile Latency</span>
+              <span class="legend-item"><span class="legend-dot line-ivory"></span> Baseline Target</span>
+            </div>
+          </div>
+
+          <!-- Chart 2: Technology Adoption by Department -->
+          <div class="chart-container-card">
+            <div class="chart-header">
+              <div>
+                <h3 class="chart-title">Technology Adoption</h3>
+                <p class="chart-subtitle">Enterprise deployment split by business unit</p>
+              </div>
+            </div>
+            <div class="canvas-chart-wrap donut-wrap">
+              <canvas id="adoptionChartCanvas" height="260" aria-label="Technology Adoption Donut Chart"></canvas>
+            </div>
+            <div class="chart-legend-row" id="adoptionLegend">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Chart 3: Project Delivery Progress -->
+          <div class="chart-container-card">
+            <div class="chart-header">
+              <div>
+                <h3 class="chart-title">Delivery Milestones Velocity</h3>
+                <p class="chart-subtitle">Sprints completed vs projected timeline</p>
+              </div>
+            </div>
+            <div class="canvas-chart-wrap">
+              <canvas id="progressChartCanvas" height="220" aria-label="Delivery Milestones Horizontal Bar Chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 4: Monthly Infrastructure Volume -->
+          <div class="chart-container-card">
+            <div class="chart-header">
+              <div>
+                <h3 class="chart-title">Monthly Enterprise Load</h3>
+                <p class="chart-subtitle">Compute &amp; Network utilization (TB / Day)</p>
+              </div>
+            </div>
+            <div class="canvas-chart-wrap">
+              <canvas id="volumeChartCanvas" height="220" aria-label="Monthly Enterprise Load Bar Chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 5: Cost Optimization vs Spend -->
+          <div class="chart-container-card">
+            <div class="chart-header">
+              <div>
+                <h3 class="chart-title">Cost Optimization vs Cloud Spend</h3>
+                <p class="chart-subtitle">Pre-optimization projected vs actual realized savings</p>
+              </div>
+            </div>
+            <div class="canvas-chart-wrap">
+              <canvas id="costChartCanvas" height="220" aria-label="Cost Optimization Comparative Curve"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECT MANAGEMENT PANEL ================= -->
+    <section class="section-padding projects-section" id="projects">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="section-eyebrow">PORTFOLIO TRACKING</div>
+            <h2 class="section-title">Enterprise Project Portfolio</h2>
+            <p class="section-description">
+              Real-time monitoring of client architectural rollouts, agile velocity, milestone deliverables, and deployment statuses.
+            </p>
+          </div>
+          <button class="btn btn-primary" id="openNewProjectModalBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>Create New Project</span>
+          </button>
+        </div>
+
+        <!-- Project Filter Controls -->
+        <div class="table-controls-bar">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="projectSearchInput" placeholder="Filter projects by client, name, or lead...">
+          </div>
+
+          <div class="table-filters">
+            <select id="projectStatusFilter" class="form-select sm">
+              <option value="all">All Statuses</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Planning">Planning</option>
+              <option value="Review">Review</option>
+              <option value="Completed">Completed</option>
+            </select>
+
+            <select id="projectPriorityFilter" class="form-select sm">
+              <option value="all">All Priorities</option>
+              <option value="Critical">Critical</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Responsive Projects Table Container -->
+        <div class="responsive-table-container">
+          <table class="enterprise-table" id="projectsTable">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Enterprise Client</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Lead Architect</th>
+                <th>Deadline</th>
+                <th>Priority</th>
+                <th class="text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="projectsTableBody">
+              <!-- Populated dynamically via script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE SUPPORT CENTER ================= -->
+    <section class="section-padding support-section" id="support-center">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="section-eyebrow">MISSION CRITICAL SUPPORT</div>
+            <h2 class="section-title">Enterprise Support &amp; SLA Desk</h2>
+            <p class="section-description">
+              Direct access to tier-3 solutions architects and dedicated incident response coordinators backed by our 15-minute response SLA.
+            </p>
+          </div>
+          <button class="btn btn-secondary" id="openNewTicketModalBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>Open Support Ticket</span>
+          </button>
+        </div>
+
+        <!-- Ticket Controls & Stats -->
+        <div class="ticket-stats-bar">
+          <div class="t-stat">
+            <span class="t-num" id="totalTicketsCount">6</span>
+            <span class="t-label">Total Tickets</span>
+          </div>
+          <div class="t-stat">
+            <span class="t-num emerald-text" id="openTicketsCount">3</span>
+            <span class="t-label">Open / In Progress</span>
+          </div>
+          <div class="t-stat">
+            <span class="t-num platinum-text" id="resolvedTicketsCount">3</span>
+            <span class="t-label">Resolved (30D)</span>
+          </div>
+          <div class="t-stat">
+            <span class="t-num ivory-text">14.2 min</span>
+            <span class="t-label">Mean Resolution Time</span>
+          </div>
+        </div>
+
+        <!-- Ticket Filter Row -->
+        <div class="table-controls-bar">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="ticketSearchInput" placeholder="Search tickets by ticket ID, subject, or component...">
+          </div>
+
+          <div class="table-filters">
+            <select id="ticketStatusFilter" class="form-select sm">
+              <option value="all">All Statuses</option>
+              <option value="Open">Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Waiting">Waiting for Client</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tickets Grid -->
+        <div class="tickets-grid" id="ticketsGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONSULTATION BOOKING ================= -->
+    <section class="section-padding consultation-section" id="consultation">
+      <div class="container">
+        <div class="consultation-split-wrapper">
+          <!-- Left side briefing -->
+          <div class="consult-info-pane">
+            <div class="section-eyebrow">EXECUTIVE ENGAGEMENT</div>
+            <h2 class="section-title">Schedule an Enterprise Briefing</h2>
+            <p class="section-description">
+              Connect with our Managing Principal Architects to review your technical roadmap, assess infrastructure modernization, and receive a tailored architecture brief.
+            </p>
+
+            <div class="consult-perks">
+              <div class="perk-item">
+                <div class="perk-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#10b981" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Zero-Commitment Strategic Blueprint</h4>
+                  <p>Comprehensive high-level architecture diagram and cloud cost analysis delivered within 48 hours.</p>
+                </div>
+              </div>
+
+              <div class="perk-item">
+                <div class="perk-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#10b981" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Standard Mutual NDA Protection</h4>
+                  <p>All discussions are governed under our mutual enterprise confidentiality agreement.</p>
+                </div>
+              </div>
+
+              <div class="perk-item">
+                <div class="perk-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#10b981" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Dedicated Principal Solution Architect</h4>
+                  <p>Meet directly with engineering leadership, not junior sales representatives.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side Interactive Booking Form -->
+          <div class="consult-form-card">
+            <h3 class="form-title">Enterprise Consultation Request</h3>
+            <form id="consultationBookingForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="consultService">Selected Service Focus *</label>
+                  <select id="consultService" class="form-control" required>
+                    <option value="">Select Service Area...</option>
+                    <option value="Digital Transformation & Modernization">Digital Transformation &amp; Modernization</option>
+                    <option value="Hyperscale Cloud Infrastructure">Hyperscale Cloud Infrastructure</option>
+                    <option value="Enterprise AI & Autonomous Workflows">Enterprise AI &amp; Autonomous Workflows</option>
+                    <option value="Zero-Trust Cybersecurity Mesh">Zero-Trust Cybersecurity Mesh</option>
+                    <option value="Data Fabric & BI Telemetry">Data Fabric &amp; BI Telemetry</option>
+                    <option value="Mission-Critical Software Engineering">Mission-Critical Software Engineering</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="consultIndustry">Industry Sector *</label>
+                  <select id="consultIndustry" class="form-control" required>
+                    <option value="">Select Industry...</option>
+                    <option value="Banking & Financial Services">Banking &amp; Financial Services</option>
+                    <option value="Healthcare & Life Sciences">Healthcare &amp; Life Sciences</option>
+                    <option value="Retail & Global Commerce">Retail &amp; Global Commerce</option>
+                    <option value="Industrial Manufacturing">Industrial Manufacturing</option>
+                    <option value="Government & Defense">Government &amp; Defense</option>
+                    <option value="Technology & Telecommunications">Technology &amp; Telecommunications</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="consultDate">Preferred Date *</label>
+                  <input type="date" id="consultDate" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="consultTime">Preferred Time Slot *</label>
+                  <select id="consultTime" class="form-control" required>
+                    <option value="">Select Time Window...</option>
+                    <option value="09:00 AM - 10:00 AM EST">09:00 AM - 10:00 AM EST (Morning)</option>
+                    <option value="11:30 AM - 12:30 PM EST">11:30 AM - 12:30 PM EST (Midday)</option>
+                    <option value="02:00 PM - 03:00 PM EST">02:00 PM - 03:00 PM EST (Afternoon)</option>
+                    <option value="04:30 PM - 05:30 PM EST">04:30 PM - 05:30 PM EST (Late)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Meeting Format Chips -->
+              <div class="form-group">
+                <label>Meeting Format *</label>
+                <div class="format-chips-row" id="meetingFormatChips">
+                  <button type="button" class="chip-btn active" data-format="Video Conference">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                    </svg>
+                    <span>Secure Video Call</span>
+                  </button>
+
+                  <button type="button" class="chip-btn" data-format="Executive Briefing Room">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                      <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>Office Executive Briefing</span>
+                  </button>
+
+                  <button type="button" class="chip-btn" data-format="Secure Teleconference">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>Direct Phone Call</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Personal & Org Details -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="consultName">Executive Full Name *</label>
+                  <input type="text" id="consultName" class="form-control" placeholder="e.g. Dr. Jennifer Vance" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="consultEmail">Work / Corporate Email *</label>
+                  <input type="email" id="consultEmail" class="form-control" placeholder="j.vance@enterprise.com" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="consultCompany">Organization Name *</label>
+                  <input type="text" id="consultCompany" class="form-control" placeholder="Global Logistics Corp" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="consultRole">Executive Title</label>
+                  <input type="text" id="consultRole" class="form-control" placeholder="Chief Technology Officer">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="consultNotes">Key Requirements or Architectural Objectives</label>
+                <textarea id="consultNotes" class="form-control" rows="3" placeholder="Briefly describe your current technical challenges, desired scale, or target deadlines..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitConsultBtn">
+                <span>Confirm &amp; Schedule Consultation</span>
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CASE STUDIES ================= -->
+    <section class="section-padding case-studies-section" id="case-studies">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">PROVEN TRANSFORMATION</div>
+          <h2 class="section-title">Verified Enterprise Impact</h2>
+          <p class="section-description">
+            Explore how Fortune 500 companies, Tier-1 banking consortia, and global healthcare organizations achieve measurable technical and operational milestones with SYNERGEX.
+          </p>
+        </div>
+
+        <div class="case-studies-grid" id="caseStudiesGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE INSIGHTS & WHITEPAPERS ================= -->
+    <section class="section-padding insights-section" id="insights">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="section-eyebrow">EXECUTIVE THOUGHT LEADERSHIP</div>
+            <h2 class="section-title">Enterprise Insights &amp; Whitepapers</h2>
+            <p class="section-description">
+              In-depth research papers on high-performance cloud mesh, sovereign AI governance, and zero-trust engineering.
+            </p>
+          </div>
+          <div class="insights-filter-pills" id="insightsFilterPills">
+            <button class="pill-btn active" data-cat="all">All Topics</button>
+            <button class="pill-btn" data-cat="ai">AI Governance</button>
+            <button class="pill-btn" data-cat="cloud">Cloud Architecture</button>
+            <button class="pill-btn" data-cat="security">Cybersecurity</button>
+            <button class="pill-btn" data-cat="strategy">Strategy</button>
+          </div>
+        </div>
+
+        <div class="insights-grid" id="insightsGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE TEAM DIRECTORY ================= -->
+    <section class="section-padding team-section" id="team">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">WORLD-CLASS ADVISORY</div>
+          <h2 class="section-title">Principal Architecture Leadership</h2>
+          <p class="section-description">
+            Collaborate directly with seasoned industry veterans, former hyperscaler tech leads, and certified security researchers.
+          </p>
+        </div>
+
+        <!-- Team Filter & Search -->
+        <div class="table-controls-bar">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="teamSearchInput" placeholder="Search team by name, specialty, or expertise...">
+          </div>
+
+          <div class="table-filters">
+            <select id="teamDeptFilter" class="form-select sm">
+              <option value="all">All Disciplines</option>
+              <option value="Architecture">Enterprise Architecture</option>
+              <option value="Cloud">Cloud &amp; DevOps</option>
+              <option value="Security">Cybersecurity &amp; Zero-Trust</option>
+              <option value="AI">AI &amp; Autonomous Systems</option>
+              <option value="Data">Data &amp; Analytics</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="team-grid" id="teamGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLIENT COMMUNICATION CENTER ================= -->
+    <section class="section-padding communication-section" id="communication">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">REAL-TIME COLLABORATION</div>
+          <h2 class="section-title">Client Communication Hub</h2>
+          <p class="section-description">
+            Direct, encrypted real-time channel connecting your executive team with dedicated SYNERGEX pod leaders and solution architects.
+          </p>
+        </div>
+
+        <div class="chat-portal-frame">
+          <!-- Contact Directory Sidebar -->
+          <div class="chat-sidebar">
+            <div class="chat-sidebar-header">
+              <h4>Assigned Specialists</h4>
+              <span class="online-pill">3 Available</span>
+            </div>
+            <div class="chat-contacts-list" id="chatContactsList">
+              <!-- Dynamically populated via script.js -->
+            </div>
+          </div>
+
+          <!-- Active Message Thread -->
+          <div class="chat-main">
+            <div class="chat-thread-header" id="chatThreadHeader">
+              <div class="active-contact-info">
+                <div class="avatar-circle">
+                  <span class="avatar-initials">MR</span>
+                  <span class="status-indicator online"></span>
+                </div>
+                <div>
+                  <h4 id="activeChatName">Marcus Ray</h4>
+                  <span id="activeChatRole" class="sub-text">Principal Cloud Architect • Active Now</span>
+                </div>
+              </div>
+              <div class="chat-actions">
+                <button class="icon-btn-sm" id="callSpecialistBtn" title="Request Instant Audio Call">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </button>
+                <button class="icon-btn-sm" id="clearChatHistoryBtn" title="Clear Conversation">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Messages Scroll Area -->
+            <div class="chat-messages-container" id="chatMessagesContainer">
+              <!-- Dynamically populated via script.js -->
+            </div>
+
+            <!-- Chat Input Form -->
+            <form class="chat-input-bar" id="chatInputForm">
+              <button type="button" class="chat-attach-btn" id="chatAttachBtn" title="Attach Document / Blueprint">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                </svg>
+              </button>
+              <input type="text" id="chatMessageInput" placeholder="Type an encrypted message or architectural question..." autocomplete="off" required>
+              <button type="submit" class="btn btn-primary chat-send-btn" id="chatSendBtn">
+                <span>Send</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DOCUMENT VAULT / COMPLIANCE CENTER ================= -->
+    <section class="section-padding documents-section" id="documents">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="section-eyebrow">SECURE REPOSITORY</div>
+            <h2 class="section-title">Enterprise Document Center</h2>
+            <p class="section-description">
+              Access certified security attestations, architectural whitepapers, service level agreements, and quarterly telemetry audits.
+            </p>
+          </div>
+          <div class="doc-filter-pills" id="docFilterPills">
+            <button class="pill-btn active" data-type="all">All Documents</button>
+            <button class="pill-btn" data-type="compliance">Compliance</button>
+            <button class="pill-btn" data-type="architecture">Architecture</button>
+            <button class="pill-btn" data-type="contracts">SLA &amp; Contracts</button>
+          </div>
+        </div>
+
+        <div class="documents-grid" id="documentsGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DEDICATED CLIENT PORTAL VIEW TAB ================= -->
+    <section class="section-padding client-portal-view hidden" id="portalView">
+      <div class="container">
+        <div class="portal-banner">
+          <div class="portal-user-meta">
+            <span class="portal-eyebrow">EXECUTIVE WORKSPACE</span>
+            <h2 id="portalWelcomeText">Enterprise Solutions Command Center</h2>
+            <p>Welcome back, <strong id="portalUserOrgName">Global Enterprise Client</strong>. Your SLA status is <strong>Optimum (Tier-1 Dedicated Mesh)</strong>.</p>
+          </div>
+          <div class="portal-quick-actions">
+            <button class="btn btn-secondary btn-sm" id="closePortalViewBtn">&larr; Return to Public Portal</button>
+            <button class="btn btn-primary btn-sm" id="portalEditProfileBtn">Manage Organization Profile</button>
+          </div>
+        </div>
+
+        <!-- Portal Sub-Nav / Tabs -->
+        <div class="portal-tab-bar">
+          <button class="portal-tab active" data-ptab="overview">Dashboard Overview</button>
+          <button class="portal-tab" data-ptab="projects">My Projects</button>
+          <button class="portal-tab" data-ptab="support">Support Tickets</button>
+          <button class="portal-tab" data-ptab="documents">Document Vault</button>
+          <button class="portal-tab" data-ptab="consultations">Consultations</button>
+          <button class="portal-tab" data-ptab="settings">Organization Settings</button>
+        </div>
+
+        <!-- Portal Tab: Overview -->
+        <div class="portal-content-pane" id="portalPaneOverview">
+          <div class="portal-stat-deck">
+            <div class="deck-stat-card">
+              <span class="deck-stat-title">Active Deployments</span>
+              <span class="deck-stat-value">6 Production</span>
+              <span class="deck-stat-status positive">&bull; Healthy</span>
+            </div>
+            <div class="deck-stat-card">
+              <span class="deck-stat-title">Current Sprint Velocity</span>
+              <span class="deck-stat-value">94% Done</span>
+              <span class="deck-stat-status positive">&bull; On Schedule</span>
+            </div>
+            <div class="deck-stat-card">
+              <span class="deck-stat-title">Next Milestone</span>
+              <span class="deck-stat-value">Oct 14, 2026</span>
+              <span class="deck-stat-status neutral">&bull; Zero-Trust Phase 2</span>
+            </div>
+            <div class="deck-stat-card">
+              <span class="deck-stat-title">Open Support Tickets</span>
+              <span class="deck-stat-value" id="portalOpenTicketsBadge">2 Active</span>
+              <span class="deck-stat-status positive">&bull; Response Under 15m</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portal Tab: Consultations & Calendar -->
+        <div class="portal-content-pane hidden" id="portalPaneConsultations">
+          <div class="consultation-calendar-card">
+            <div class="card-header-flex">
+              <h3>Scheduled Executive Briefings</h3>
+              <a href="#consultation" class="btn btn-primary btn-sm">+ Book Another Session</a>
+            </div>
+            <div class="appointments-list" id="portalAppointmentsList">
+              <!-- Dynamically rendered from localStorage -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Portal Tab: Settings & Profile -->
+        <div class="portal-content-pane hidden" id="portalPaneSettings">
+          <div class="portal-settings-card">
+            <h3>Enterprise Organization Profile</h3>
+            <form id="portalProfileForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="profFullName">Executive Contact</label>
+                  <input type="text" id="profFullName" class="form-control" value="Jennifer Vance">
+                </div>
+                <div class="form-group">
+                  <label for="profOrgName">Organization Legal Name</label>
+                  <input type="text" id="profOrgName" class="form-control" value="Nexus Global Technologies Inc.">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="profTitle">Executive Role</label>
+                  <input type="text" id="profTitle" class="form-control" value="Vice President of Engineering">
+                </div>
+                <div class="form-group">
+                  <label for="profEmail">Enterprise Email</label>
+                  <input type="email" id="profEmail" class="form-control" value="j.vance@nexusglobal.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="profRegion">Primary Deployment Region</label>
+                  <select id="profRegion" class="form-control">
+                    <option value="us-east">US East (N. Virginia &amp; Ohio)</option>
+                    <option value="eu-central">EU Central (Frankfurt &amp; Zurich)</option>
+                    <option value="ap-southeast">APAC (Singapore &amp; Tokyo)</option>
+                    <option value="sovereign">Sovereign On-Premise Air-Gapped</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="profTier">Support Tier Agreement</label>
+                  <input type="text" id="profTier" class="form-control" value="Enterprise Platinum (15m SLA)" readonly>
+                </div>
+              </div>
+
+              <!-- Security Toggle -->
+              <div class="toggle-group-row">
+                <div class="toggle-info">
+                  <strong>Hardware 2FA / WebAuthn Enforcement</strong>
+                  <p>Mandate FIDO2 security keys for all enterprise account administrators.</p>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="prof2faToggle" checked>
+                  <span class="slider round"></span>
+                </label>
+              </div>
+
+              <div class="form-actions mt-4">
+                <button type="submit" class="btn btn-primary" id="saveProfileBtn">Save Profile Changes</button>
+                <span class="save-status-msg" id="profileSaveMsg"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= ENTERPRISE FOOTER ================= -->
+  <footer class="app-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand-col">
+          <div class="brand-logo footer-logo">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
+              <rect x="3" y="3" width="34" height="34" rx="10" fill="#041610" stroke="#10b981" stroke-width="1.8"/>
+              <path d="M20 8 L32 15 L32 25 L20 32 L8 25 L8 15 Z" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="20" cy="20" r="3.5" fill="#34d399"/>
+            </svg>
+            <div class="brand-text-group">
+              <span class="brand-name">SYNERGEX</span>
+              <span class="brand-sub">ENTERPRISE SOLUTIONS</span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            Sovereign enterprise technology, cloud modernization, autonomous AI workflows, and zero-trust engineering for the world’s leading digital institutions.
+          </p>
+          <div class="compliance-badges">
+            <span class="c-badge">SOC-2 TYPE II</span>
+            <span class="c-badge">ISO 27001</span>
+            <span class="c-badge">HIPAA READY</span>
+            <span class="c-badge">FEDRAMP</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="#solutions" data-filter="cloud">Cloud Architecture</a></li>
+            <li><a href="#solutions" data-filter="ai">AI &amp; Autonomous Systems</a></li>
+            <li><a href="#solutions" data-filter="security">Zero-Trust Cybersecurity</a></li>
+            <li><a href="#solutions" data-filter="data">Data Intelligence Fabric</a></li>
+            <li><a href="#solutions" data-filter="engineering">Software Engineering</a></li>
+            <li><a href="#solutions" data-filter="optimization">Process Optimization</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Industries -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Industries</h4>
+          <ul class="footer-links">
+            <li><a href="#industries">Banking &amp; Financial Services</a></li>
+            <li><a href="#industries">Healthcare &amp; Life Sciences</a></li>
+            <li><a href="#industries">Retail &amp; Global Commerce</a></li>
+            <li><a href="#industries">Industrial Manufacturing</a></li>
+            <li><a href="#industries">Government &amp; Defense</a></li>
+            <li><a href="#industries">Energy &amp; Telecommunications</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform & Governance -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#analytics">Executive BI Dashboard</a></li>
+            <li><a href="#projects">Project Management Panel</a></li>
+            <li><a href="#support-center">Enterprise Support Desk</a></li>
+            <li><a href="#documents">Document Repository</a></li>
+            <li><a href="#consultation">Schedule Executive Briefing</a></li>
+            <li><a href="#communication">Client Communication Hub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> SYNERGEX Global Technologies Inc. All enterprise rights reserved.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#documents">Security Whitepapers</a>
+          <a href="#documents">Privacy Policy</a>
+          <a href="#documents">Terms of Engagement</a>
+          <a href="#documents">SLA Governance</a>
+          <span class="system-status-indicator"><span class="pulse-dot"></span> All Systems Normal</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS & DRAWERS CONTAINER ================= -->
+
+  <!-- 1. SPOTLIGHT GLOBAL SEARCH MODAL (Ctrl + K) -->
+  <div class="modal-backdrop hidden" id="searchModalBackdrop" role="dialog" aria-modal="true" aria-label="Global Search">
+    <div class="search-spotlight-card">
+      <div class="spotlight-input-row">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="globalSpotlightInput" placeholder="Search across solutions, services, industries, whitepapers, team..." autocomplete="off">
+        <span class="esc-badge">ESC</span>
+      </div>
+      <div class="spotlight-results" id="globalSpotlightResults">
+        <!-- Dynamically rendered search results -->
+        <div class="search-category-group">
+          <span class="group-title">QUICK JUMP SUGGESTIONS</span>
+          <div class="spotlight-item" data-action="goto" data-target="#solutions">
+            <span class="item-icon">⚡</span>
+            <div class="item-body">
+              <strong>Enterprise Solutions Marketplace</strong>
+              <span>Browse cloud, AI, and cybersecurity architectures</span>
+            </div>
+            <span class="item-type-badge">Section</span>
+          </div>
+          <div class="spotlight-item" data-action="goto" data-target="#analytics">
+            <span class="item-icon">📊</span>
+            <div class="item-body">
+              <strong>BI Analytics Dashboard</strong>
+              <span>View telemetry, performance charts, and cost savings</span>
+            </div>
+            <span class="item-type-badge">Dashboard</span>
+          </div>
+          <div class="spotlight-item" data-action="goto" data-target="#consultation">
+            <span class="item-icon">📅</span>
+            <div class="item-body">
+              <strong>Request an Enterprise Briefing</strong>
+              <span>Schedule 1-on-1 session with Principal Architect</span>
+            </div>
+            <span class="item-type-badge">Action</span>
+          </div>
+        </div>
+      </div>
+      <div class="spotlight-footer">
+        <span>Use <kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate, <kbd>ENTER</kbd> to select, <kbd>ESC</kbd> to dismiss.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SAVED ITEMS / BOOKMARKS DRAWER -->
+  <div class="drawer-backdrop hidden" id="savedDrawerBackdrop" role="dialog" aria-modal="true" aria-label="Saved Bookmarks">
+    <div class="drawer-panel drawer-right">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#10b981" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <h3>Saved Items &amp; Briefs</h3>
+        </div>
+        <button class="drawer-close-btn" id="closeSavedDrawerBtn">&times;</button>
+      </div>
+      <div class="drawer-body" id="savedDrawerItemsList">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="drawer-footer">
+        <button class="btn btn-primary btn-block" id="exportSavedBriefBtn">Export Custom Enterprise Brief (PDF/Text)</button>
+        <button class="btn btn-ghost btn-block text-sm" id="clearAllSavedBtn">Clear All Saved Items</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. NOTIFICATIONS DRAWER -->
+  <div class="drawer-backdrop hidden" id="notifDrawerBackdrop" role="dialog" aria-modal="true" aria-label="Enterprise Notifications">
+    <div class="drawer-panel drawer-right">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#10b981" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <h3>Enterprise Notifications</h3>
+        </div>
+        <button class="drawer-close-btn" id="closeNotifDrawerBtn">&times;</button>
+      </div>
+      <div class="drawer-sub-header">
+        <button class="btn btn-ghost btn-sm" id="markAllNotifsReadBtn">Mark All as Read</button>
+        <button class="btn btn-ghost btn-sm" id="clearAllNotifsBtn">Clear</button>
+      </div>
+      <div class="drawer-body" id="notifDrawerList">
+        <!-- Dynamically rendered notifications -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SOLUTION DETAIL MODAL -->
+  <div class="modal-backdrop hidden" id="solutionModalBackdrop" role="dialog" aria-modal="true" aria-label="Solution Details">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-badge-row">
+          <span class="category-pill" id="solModalCategory">Cloud Infrastructure</span>
+          <span class="metric-pill" id="solModalMetric">99.999% SLA</span>
+        </div>
+        <button class="modal-close-btn" id="closeSolutionModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="solModalContent">
+        <!-- Populated via script.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="solModalSaveBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span>Save to My Brief</span>
+        </button>
+        <button class="btn btn-primary" id="solModalRequestBtn">Request This Solution</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CASE STUDY DETAIL MODAL -->
+  <div class="modal-backdrop hidden" id="caseStudyModalBackdrop" role="dialog" aria-modal="true" aria-label="Case Study Reader">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <span class="category-pill" id="caseModalClient">Client Transformation</span>
+        <button class="modal-close-btn" id="closeCaseModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="caseModalContent">
+        <!-- Populated dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="caseModalPrintBtn">Print / Export Case Brief</button>
+        <button class="btn btn-primary" id="caseModalConsultBtn">Schedule Similar Transformation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. NEW PROJECT CREATION MODAL -->
+  <div class="modal-backdrop hidden" id="newProjectModalBackdrop" role="dialog" aria-modal="true" aria-label="Create New Project">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New Enterprise Project</h3>
+        <button class="modal-close-btn" id="closeNewProjectModalBtn">&times;</button>
+      </div>
+      <form id="newProjectForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="newProjName">Project Name *</label>
+            <input type="text" id="newProjName" class="form-control" placeholder="e.g. Zero-Trust Mesh Rollout Phase 3" required>
+          </div>
+          <div class="form-group">
+            <label for="newProjClient">Enterprise Client *</label>
+            <input type="text" id="newProjClient" class="form-control" placeholder="e.g. AcroCorp Global" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="newProjLead">Lead Architect</label>
+              <input type="text" id="newProjLead" class="form-control" placeholder="e.g. Marcus Ray">
+            </div>
+            <div class="form-group">
+              <label for="newProjPriority">Priority Level</label>
+              <select id="newProjPriority" class="form-control">
+                <option value="Critical">Critical</option>
+                <option value="High" selected>High</option>
+                <option value="Medium">Medium</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="newProjDeadline">Target Delivery Date</label>
+              <input type="date" id="newProjDeadline" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="newProjStatus">Initial Status</label>
+              <select id="newProjStatus" class="form-control">
+                <option value="Planning">Planning</option>
+                <option value="In Progress" selected>In Progress</option>
+                <option value="Review">Review</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" id="cancelNewProjBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Initialize Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. NEW SUPPORT TICKET MODAL -->
+  <div class="modal-backdrop hidden" id="newTicketModalBackdrop" role="dialog" aria-modal="true" aria-label="Open Support Ticket">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Open High-Priority Support Ticket</h3>
+        <button class="modal-close-btn" id="closeNewTicketModalBtn">&times;</button>
+      </div>
+      <form id="newTicketForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="newTicketSubject">Ticket Subject *</label>
+            <input type="text" id="newTicketSubject" class="form-control" placeholder="e.g. Latency elevation in EU-Central mesh ingress" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="newTicketCategory">Category *</label>
+              <select id="newTicketCategory" class="form-control" required>
+                <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                <option value="Security / Firewall">Security &amp; Zero-Trust</option>
+                <option value="AI Pipeline">AI &amp; Automation</option>
+                <option value="API Integration">API &amp; Integration</option>
+                <option value="Billing & Governance">Billing &amp; Governance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="newTicketPriority">Priority Level *</label>
+              <select id="newTicketPriority" class="form-control" required>
+                <option value="Critical">Critical (15m SLA)</option>
+                <option value="High" selected>High (1h SLA)</option>
+                <option value="Medium">Medium (4h SLA)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newTicketDesc">Incident Description &amp; Reproduction Steps *</label>
+            <textarea id="newTicketDesc" class="form-control" rows="4" placeholder="Provide log snippets, affected endpoints, and timestamp details..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" id="cancelNewTicketBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit to Operations Desk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8. DEMO AUTHENTICATION MODAL -->
+  <div class="modal-backdrop hidden" id="authModalBackdrop" role="dialog" aria-modal="true" aria-label="Authentication">
+    <div class="modal-card modal-sm">
+      <div class="modal-header">
+        <h3>Enterprise Portal Access</h3>
+        <button class="modal-close-btn" id="closeAuthModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="auth-helper-text">Switch demo roles or log in to simulate verified executive enterprise capabilities.</p>
+        
+        <div class="role-selector-box">
+          <label>Quick Demo Role Switcher:</label>
+          <div class="role-pills">
+            <button class="role-pill active" data-role="Enterprise CTO" data-name="Jennifer Vance" data-org="Nexus Global Technologies">Enterprise CTO</button>
+            <button class="role-pill" data-role="DevOps Lead" data-name="Alex Chen" data-org="Aura Financial Services">DevOps Lead</button>
+            <button class="role-pill" data-role="Chief Security Officer" data-name="Samantha Miller" data-org="BioMed Health Alliance">Chief Security Officer</button>
+          </div>
+        </div>
+
+        <form id="demoLoginForm" class="mt-4">
+          <div class="form-group">
+            <label for="demoAuthEmail">Enterprise SSO Email</label>
+            <input type="email" id="demoAuthEmail" class="form-control" value="j.vance@nexusglobal.com" required>
+          </div>
+          <div class="form-group">
+            <label for="demoAuthPass">Password / Security Key</label>
+            <input type="password" id="demoAuthPass" class="form-control" value="••••••••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Authenticate Session</button>
+        </form>
+      </div>
+      <div class="modal-footer text-center">
+        <span class="auth-demo-notice">Front-End Portfolio Simulation • Hardware 2FA Verified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Core JavaScript (ZERO FOLDERS - directly in root) -->
+  <script src="script.js"></script>
+</body>
+</html>
